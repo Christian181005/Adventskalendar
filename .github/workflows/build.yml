@@ -24,6 +24,12 @@ jobs:
       - name: Package the application as a JAR
         run: mvn package
 
+      - name: Upload JAR Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: advent-calendar-jar
+          path: target/*.jar
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
